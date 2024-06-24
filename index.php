@@ -31,6 +31,7 @@
 </head>
 
 <body>
+  
 
 <?php
 
@@ -41,7 +42,6 @@ if (!isset($_SESSION['username'])) {
   header("Location: login.php");
   exit();
 }
-
 
 ?>
 
@@ -64,10 +64,14 @@ if (!isset($_SESSION['username'])) {
               include('task/task_form.php');
               break;
 
+              case '2':
+                include('user/user_form.php');
+                break;
+
             case '2':
               include('users.php');
               break;
-
+              
             case '0':
                 include('users.php');
                 break;
@@ -78,6 +82,7 @@ if (!isset($_SESSION['username'])) {
     } else {
       include('page-content.php');
     }
+
     
     
     ?>

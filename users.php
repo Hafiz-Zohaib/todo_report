@@ -1,10 +1,12 @@
+
+
 <div class="page-content-wrapper">
       <!-- start page content-->
       <div class="page-content">
 
         <!--start breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-          <div class="breadcrumb-title pe-3">Users</div>
+          <div class="breadcrumb-title pe-3">Users</div> <div style="margin-left:10px"> <a href="index.php?page=2">Add Users</a></div>
         </div>
         <!--end breadcrumb-->
 

@@ -1,12 +1,12 @@
 <?php
 // Database connection parameters
 $servername = "localhost";
-$username = "usman";
-$password = "1234";
+$username = "root";
+$password = "";
 $database = "reports";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($servername, $username, $password , $database);
 
 // // Check connection
 // if ($conn->connect_error) {
@@ -15,3 +15,5 @@ $conn = new mysqli($servername, $username, $password, $database);
 //     echo "Connected successfully";
 // }
 ?>
+
+
