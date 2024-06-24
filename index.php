@@ -64,11 +64,11 @@ if (!isset($_SESSION['username'])) {
               include('task/task_form.php');
               break;
 
-              case '2':
+              case '3':
                 include('user/user_form.php');
                 break;
 
-            case '2':
+            case '4':
               include('users.php');
               break;
               
