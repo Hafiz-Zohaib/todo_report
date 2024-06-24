@@ -17,7 +17,7 @@
                         <textarea class="form-control"></textarea>
                     </div>
                    
-                    <button type="submit" class="btn btn-primary">Add Users</button>
+                    <button type="submit" class="btn btn-primary">Add Newn Users</button>
                 </form>
             </div>
         </div>
