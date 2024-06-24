@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $yn = $_POST['url'];
     $date=date('d-m-Y');
 
-    $sql = "INSERT INTO `task`(`task`, `url`, `date`, `user_id`) VALUES ('$bn', '$yn','$date','1')";
+    $sql = "INSERT INTO `users`(`task`, `url`, `date`, `user_id`) VALUES ('$bn', '$yn','$date','1')";
     echo $sql;
     if ($conn->query($sql) === TRUE) {
         header('Location:../index.php?page=2&msg=datasave');

@@ -6,18 +6,14 @@
 
         <!--start breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-          <div class="breadcrumb-title pe-3">Users</div> <div style="margin-left:10px"> <a href="index.php?page=2">Add Users</a></div>
+          <div class="breadcrumb-title pe-3">Users</div> <div style="margin-left:10px"> <a href="index.php?page=3">Add New Users</a></div>
         </div>
-        <!--end breadcrumb-->
-
-
-
-
+        <!--Mid-->
 
         <div class="card radius-10 w-100">
           <div class="card-body">
             <div class="d-flex align-items-center">
-              <h6 class="mb-0">Recent Orders</h6>
+              <h6 class="mb-0">Recent User List</h6>
               <div class="fs-5 ms-auto dropdown">
                 <div class="dropdown-toggle dropdown-toggle-nocaret cursor-pointer" data-bs-toggle="dropdown"><i
                     class="bi bi-three-dots"></i></div>
@@ -36,32 +32,27 @@
                 <thead class="table-light">
                   <tr>
                     <th>#ID</th>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Date</th>
-                    <th>Status</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Employee ID</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>#89742</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="product-box border">
-                          <img src="assets/images/products/11.png" alt="">
-                        </div>
-                        <div class="product-info">
-                          <h6 class="product-name mb-1">Smart Mobile Phone</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>2</td>
-                    <td>Rs214</td>
-                    <td><span class="badge bg-success">Completed</span></td>
-                    <td>Apr 8, 2021</td>
-                    <td>
+
+                <?php
+                  require_once('conn.php');
+                  $sql = "SELECT * FROM `user`";
+                  $result = $conn->query($sql);
+                  if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) {
+                      echo "<tr>";
+                      echo "<td>".$row["id"]."</td>";
+                      echo "<td>".$row["name"]."</td>";
+                      echo "<td>".$row["designation"]."</td>";
+                      echo "<td>".$row["emp_id"]."</td>";                     
+                      echo '<td>
                       <div class="d-flex align-items-center gap-3 fs-6">
                         <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom"
                           title="" data-bs-original-title="View detail" aria-label="Views">
@@ -76,178 +67,62 @@
                           <ion-icon name="trash-outline"></ion-icon>
                         </a>
                       </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#68570</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="product-box border">
-                          <img src="assets/images/products/07.png" alt="">
-                        </div>
-                        <div class="product-info">
-                          <h6 class="product-name mb-1">Sports Time Watch</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>1</td>
-                    <td>Rs185</td>
-                    <td><span class="badge bg-success">Completed</span></td>
-                    <td>Apr 9, 2021</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-3 fs-6">
-                        <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="View detail" aria-label="Views">
-                          <ion-icon name="eye-outline"></ion-icon>
-                        </a>
-                        <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="Edit info" aria-label="Edit">
-                          <ion-icon name="pencil-outline"></ion-icon>
-                        </a>
-                        <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="Delete" aria-label="Delete">
-                          <ion-icon name="trash-outline"></ion-icon>
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#38567</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="product-box border">
-                          <img src="assets/images/products/17.png" alt="">
-                        </div>
-                        <div class="product-info">
-                          <h6 class="product-name mb-1">Women Red Heals</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>3</td>
-                    <td>Rs356</td>
-                    <td><span class="badge bg-danger">Cancelled</span></td>
-                    <td>Apr 10, 2021</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-3 fs-6">
-                        <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="View detail" aria-label="Views">
-                          <ion-icon name="eye-outline"></ion-icon>
-                        </a>
-                        <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="Edit info" aria-label="Edit">
-                          <ion-icon name="pencil-outline"></ion-icon>
-                        </a>
-                        <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="Delete" aria-label="Delete">
-                          <ion-icon name="trash-outline"></ion-icon>
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#48572</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="product-box border">
-                          <img src="assets/images/products/04.png" alt="">
-                        </div>
-                        <div class="product-info">
-                          <h6 class="product-name mb-1">Yellow Winter Jacket</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>1</td>
-                    <td>Rs149</td>
-                    <td><span class="badge bg-success">Completed</span></td>
-                    <td>Apr 11, 2021</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-3 fs-6">
-                        <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="View detail" aria-label="Views">
-                          <ion-icon name="eye-outline"></ion-icon>
-                        </a>
-                        <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="Edit info" aria-label="Edit">
-                          <ion-icon name="pencil-outline"></ion-icon>
-                        </a>
-                        <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="Delete" aria-label="Delete">
-                          <ion-icon name="trash-outline"></ion-icon>
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#96857</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="product-box border">
-                          <img src="assets/images/products/10.png" alt="">
-                        </div>
-                        <div class="product-info">
-                          <h6 class="product-name mb-1">Orange Micro Headphone</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>2</td>
-                    <td>Rs199</td>
-                    <td><span class="badge bg-danger">Cancelled</span></td>
-                    <td>Apr 15, 2021</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-3 fs-6">
-                        <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="View detail" aria-label="Views">
-                          <ion-icon name="eye-outline"></ion-icon>
-                        </a>
-                        <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="Edit info" aria-label="Edit">
-                          <ion-icon name="pencil-outline"></ion-icon>
-                        </a>
-                        <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="Delete" aria-label="Delete">
-                          <ion-icon name="trash-outline"></ion-icon>
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#96857</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="product-box border">
-                          <img src="assets/images/products/12.png" alt="">
-                        </div>
-                        <div class="product-info">
-                          <h6 class="product-name mb-1">Pro Samsung Laptop</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>1</td>
-                    <td>Rs699</td>
-                    <td><span class="badge bg-warning">Pending</span></td>
-                    <td>Apr 18, 2021</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-3 fs-6">
-                        <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="View detail" aria-label="Views">
-                          <ion-icon name="eye-outline"></ion-icon>
-                        </a>
-                        <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="Edit info" aria-label="Edit">
-                          <ion-icon name="pencil-outline"></ion-icon>
-                        </a>
-                        <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          title="" data-bs-original-title="Delete" aria-label="Delete">
-                          <ion-icon name="trash-outline"></ion-icon>
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
+                    </td>';
+                      echo "</tr>";
+                    }
+                  }
+                  $conn->close();
+
+                ?>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
       </div>
-      <!-- end page content-->
     </div>
+    <!-- end page button content-->
+
+    <div  data-bs-toggle="modal" data-bs-target="#exampleModal" class="float " style="z-index:9999;position:fixed;right:3%;bottom:2%; background:#923EBA; border-radius:50%;padding:10px 12px; ">
+     <i class="lni lni-circle-plus" style="color:white;font-size:30px;"></i>
+                </div>
+
+
+                 <!-- Modal -->
+                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Add Users</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <form method="POST" action="user/save_user.php">
+                <div class="mb-3">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required>
+                    </div>
+                  
+                    <div class="mb-3">
+                        
+                    <label for="designation">Designation:</label><br>
+                    <input type="text" id="designation" name="designation" required>
+                    </div>
+
+                    <div class="mb-3">
+                        
+                    <label for="emp_id">Employee ID:</label><br>
+                    <input type="text" id="emp_id" name="emp_id" required>
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary">Add User</button>
+                </form>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+
+
+
+       

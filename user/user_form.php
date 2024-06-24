@@ -7,17 +7,23 @@
             <div class="card-body">
                 <form method="POST" action="user/save_user.php">
                 <div class="mb-3">
-                        <label for="yn" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="yn" name="Name" required>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required>
                     </div>
                   
                     <div class="mb-3">
                         
-                        <label for="bn" class="form-label">PAssword </label>
-                        <textarea class="form-control"></textarea>
+                    <label for="designation">Designation:</label><br>
+                    <input type="text" id="designation" name="designation" required>
+                    </div>
+
+                    <div class="mb-3">
+                        
+                    <label for="emp_id">Employee ID:</label><br>
+                    <input type="text" id="emp_id" name="emp_id" required>
                     </div>
                    
-                    <button type="submit" class="btn btn-primary">Add Newn Users</button>
+                    <button type="submit" class="btn btn-primary">Add User</button>
                 </form>
             </div>
         </div>
